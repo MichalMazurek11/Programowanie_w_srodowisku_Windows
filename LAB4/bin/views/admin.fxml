@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.adminController">
+  <tabs>
+    <Tab text="Użytkownik">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane prefHeight="375.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Wszyscy">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="wyloguj" layoutX="486.0" layoutY="20.0" mnemonicParsing="false" onAction="#wyloguj" text="Wyloguj">
+                                       <font>
+                                          <Font name="Arial Black" size="15.0" />
+                                       </font></Button>
+                                    <TableView fx:id="tableUser" layoutX="13.0" layoutY="62.0" prefHeight="260.0" prefWidth="584.0">
+                                      <columns>
+                                        <TableColumn fx:id="col_id" prefWidth="26.0" text="ID" />
+                                        <TableColumn fx:id="col_imie" prefWidth="56.0" text="IMIE" />
+                                          <TableColumn fx:id="col_nazwisko" prefWidth="62.0" text="NAZWISKO" />
+                                          <TableColumn fx:id="col_login" prefWidth="73.0" text="LOGIN" />
+                                          <TableColumn fx:id="col_password" prefWidth="84.0" text="PASSWORD" />
+                                          <TableColumn fx:id="col_email" prefWidth="64.0" text="EMAIL" />
+                                          <TableColumn fx:id="col_uprawnienia" minWidth="0.0" prefWidth="68.0" text="UPRAWNIENIA" />
+                                          <TableColumn fx:id="col_data_rejestracji" prefWidth="167.0" text="DATA_REJESTRACJI" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="load" layoutX="28.0" layoutY="20.0" mnemonicParsing="false" onAction="#load" text="Odswież">
+                                       <font>
+                                          <Font name="Arial Black" size="15.0" />
+                                       </font></Button>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Dodaj">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button layoutX="229.0" layoutY="279.0" mnemonicParsing="false" onAction="#admin_addUser" prefHeight="25.0" prefWidth="111.0" text="Add User">
+                                       <font>
+                                          <Font name="Arial Black" size="13.0" />
+                                       </font></Button>
+                                    <TextField fx:id="admin_imie" layoutX="210.0" layoutY="40.0" promptText="imie" />
+                                    <TextField fx:id="admin_nazwisko" layoutX="210.0" layoutY="80.0" promptText="nazwisko" />
+                                    <TextField fx:id="admin_login" layoutX="210.0" layoutY="120.0" promptText="login" />
+                                    <PasswordField fx:id="admin_password" layoutX="210.0" layoutY="160.0" promptText="password" />
+                                    <TextField fx:id="admin_email" layoutX="210.0" layoutY="200.0" promptText="email" />
+                                    <ChoiceBox fx:id="admin_uprawnienia" layoutX="210.0" layoutY="239.0" prefWidth="150.0" />
+                                    <Text layoutX="49.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMIE : ">
+                                       <font>
+                                          <Font name="Arial Black" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="49.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAZWISKO : ">
+                                       <font>
+                                          <Font name="Arial Black" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="49.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN : ">
+                                       <font>
+                                          <Font name="Arial Black" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="49.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD :">
+                                       <font>
+                                          <Font name="Arial Black" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="49.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL : ">
+                                       <font>
+                                          <Font name="Arial Black" size="16.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="49.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UPRAWNIENIA : ">
+                                       <font>
+                                          <Font name="Arial Black" size="16.0" />
+                                       </font>
+                                    </Text>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Usun">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="user_usun" layoutX="226.0" layoutY="126.0" promptText="Login user with you want to delet" />
+                                    <Button fx:id="btn_delete_user" layoutX="260.0" layoutY="182.0" mnemonicParsing="false" onAction="#btn_delete_user" text="Delete">
+                                       <font>
+                                          <Font name="Arial Black" size="14.0" />
+                                       </font></Button>
+                                    <Text layoutX="128.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN : ">
+                                       <font>
+                                          <Font name="Arial Black" size="19.0" />
+                                       </font>
+                                    </Text>
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Zmiana hasla">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="change_login" layoutX="216.0" layoutY="86.0" promptText="Login" />
+                                    <Button fx:id="btn_change_password" layoutX="170.0" layoutY="209.0" mnemonicParsing="false" onAction="#btn_change_password" prefHeight="39.0" prefWidth="241.0" text="Change password">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font></Button>
+                                    <PasswordField fx:id="change_password" layoutX="216.0" layoutY="123.0" promptText="password" />
+                                    <PasswordField fx:id="change_password2" layoutX="216.0" layoutY="161.0" promptText="password" />
+                                    <Text layoutX="98.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN : ">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="73.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD : ">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="73.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD : ">
+                                       <font>
+                                          <Font name="Arial Black" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children></AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Zapisy">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tabela_prosba" layoutX="8.0" layoutY="126.0" prefHeight="200.0" prefWidth="197.0">
+                    <columns>
+                      <TableColumn fx:id="col_nazwa1" prefWidth="85.0" text="Nazwa_wydarzenia" />
+                      <TableColumn fx:id="col_login1" prefWidth="114.0" text="LOGIN" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="tabela_dodani" layoutX="368.0" layoutY="126.0" prefHeight="200.0" prefWidth="218.0">
+                    <columns>
+                      <TableColumn fx:id="col_nazwa2" prefWidth="105.0" text="Nazwa" />
+                      <TableColumn fx:id="col_login2" prefWidth="78.0" text="LOGIN" />
+                        <TableColumn prefWidth="16.0" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="dodaj_prosbe" layoutX="243.0" layoutY="226.0" mnemonicParsing="false" onAction="#dodaj_prosbe" text="Dodaj_prosbe" />
+                  <Text layoutX="99.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prośby" />
+                  <Text layoutX="426.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodani" />
+                  <ComboBox fx:id="lista_wydarzen" layoutX="213.0" layoutY="56.0" onAction="#lista_wydarzen" prefWidth="150.0" />
+                  <TextField fx:id="podaj_login" layoutX="214.0" layoutY="173.0" />
+               </children></AnchorPane>
+         </content>
+      </Tab>
+    <Tab text="Wydarzenia">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Wszystkie">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" />
+                        </content>
+                      </Tab>
+                      <Tab text="Dodaj">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="290.0" prefWidth="600.0">
+                                 <children>
+                                    <TextField fx:id="addEventName" layoutX="83.0" layoutY="81.0" promptText="Nazwa" />
+                                    <DatePicker fx:id="addEventTermin" layoutX="71.0" layoutY="125.0" promptText="termin wydarzenia" />
+                                    <TextArea fx:id="addEventAgenda" layoutX="328.0" layoutY="62.0" prefHeight="200.0" prefWidth="200.0" promptText="Agenda" />
+                                    <Button layoutX="132.0" layoutY="271.0" mnemonicParsing="false" onAction="#addEvent" prefHeight="25.0" prefWidth="97.0" text="Add event" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
